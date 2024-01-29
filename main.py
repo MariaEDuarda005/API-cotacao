@@ -5,21 +5,19 @@ cotacoes = requests.get("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL
 cotacoes = cotacoes.json()
 
 #cotacao_dolar = cotacoes['USDBRL']["bid"]
+print(cotacoes)
 
 precos = {}
 
 for i in cotacoes:
     precos[i] = cotacoes[i]["bid"]
-    # nome = cotacoes[i]["name"]
-    # valor = cotacoes[i]["bid"]
-    # print(valor)
-    # print(nome)
-    # print(precos)
+
 
 for i in precos:
     print(f"{i}: {precos[i]}")
 
 
+# outro modo de fazer
 for i in cotacoes:
     nome = cotacoes[i]["name"]
     valor = cotacoes[i]["bid"]
